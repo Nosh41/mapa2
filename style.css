@@ -1,0 +1,71 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+html,
+body {
+    margin: 0px;
+}
+
+.tooltip {
+    font-family: 'Lato', 'Arial', sans-serif;
+    position: absolute;
+    text-align: left;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    font: 1em;
+    background: rgb(255, 255, 255);
+    pointer-events: none;
+    box-shadow: 0 5px 10px hsla(0, 0%, 0%, .2);
+    line-height: 1.5em;
+}
+
+.def {
+    font-weight: 700;
+}
+
+div#PanelIzquierda {
+    float: left;
+    width: 30%;
+}
+
+div#PanelDerecha {
+    float: left;
+    width: 50%;
+}
+
+h1 {
+    background-color: rgba(169, 169, 169, 0.178);
+    color: rgba(255, 255, 255, 0.178);
+    margin: 5px;
+    border: solid 2px rgba(136, 136, 136, 0.171);
+    padding: 5px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-align: center
+}
+
+button {
+    position: absolute;
+    top: 10px;
+    left: 47vw;
+    border: 1px solid white;
+    color: white;
+    padding: 4px 10px;
+    background: black;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+svg {
+    width: 100vw;
+    height: 100vh;
+}
+
+#booms,
+#boomlines {
+    visibility: hidden;
+}
+
+@media (max-width: 600px) {
+    svg {
+        max-height: 600px;
+    }
+}

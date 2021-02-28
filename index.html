@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Graficos D3 III</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="sistema_solar.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://d3js.org/d3.geo.projection.v0.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <script src="app.js"></script>
+    <script src="tierra.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+</head>
+
+<body onload="mapa2()">
+
+    <div id='container' class="mileage" style="height: fit-content;">
+        <h2 style="text-align: center; color: brown;">Sistema Solar</h2>
+
+        <section class="clearfix">
+
+            <ul class="solarsystem">
+                <li class="sun"><a href="#sun"><span>Sun</span></a></li>
+                <li class="mercury"><a href="#mercury"><span>Mercury</span></a></li>
+                <li class="venus"><a href="#venus"><span>Venus</span></a></li>
+                <li class="earth"><a href="#earth"><span>Earth<span class="moon"> &amp; Moon</span></span></a></li>
+                <li class="mars"><a href="#mars"><span>Mars</span></a></li>
+                <li class="asteroids_meteorids"><span>Asteroids &amp; Meteorids</span></li>
+                <li class="jupiter"><a href="#jupiter"><span>Jupiter</span></a></li>
+                <li class="saturn"><a href="#saturn"><span>Saturn &amp; <span class="ring">Ring</span></span></a></li>
+                <li class="uranus"><a href="#uranus"><span>Uranus</span></a></li>
+                <li class="neptune"><a href="#neptune"><span>Neptune</span></a></li>
+                <li class="pluto"><a href="#pluto"><span>Pluto</span></a></li>
+            </ul>
+
+            <ul id="descriptions">
+                <li>
+                    <h2 id="sun">Sol</h2>
+                    <p>El Sol es una estrella, una bola caliente de gases incandescentes en el corazón de nuestro sistema solar. Su influencia se extiende mucho más allá de las órbitas de los distantes Neptuno y Plutón. Sin la intensa energía y el calor
+                        del Sol, no habría vida en la Tierra. Y aunque es especial para nosotros, hay miles de millones de estrellas como nuestro Sol esparcidas por la Vía Láctea.</p>
+                </li>
+
+                <li>
+                    <h2 id="mercury">Mercurio</h2>
+                    <p>Mercurio está más cerca del sol es solo un poco más grande que la Luna de la Tierra. Al igual que la Luna, Mercurio tiene muy poca atmósfera para detener los impactos y está cubierto de cráteres. El lado diurno de Mercurio está sobrecalentado
+                        por el sol, pero a temperaturas nocturnas caer cientos de grados bajo cero. Incluso puede existir hielo en cráteres. La órbita en forma de huevo de Mercurio da la vuelta al Sol cada 88 días.</p>
+                </li>
+
+                <li>
+                    <h2 id="venus">Venus</h2>
+                    <p>Venus es un mundo oscuro de intenso calor y actividad volcánica. Similar en estructura y tamaño a la Tierra, la atmósfera espesa y tóxica de Venus atrapa el calor en un 'efecto invernadero' desbocado. Este planeta tiene temperaturas
+                        lo suficientemente altas como para derretir el Plomo. Los destellos debajo de las nubes revelan volcanes y montañas deformadas. Venus gira lentamente en la dirección opuesta a la mayoría de los planetas.</p>
+                </li>
+
+                <li>
+                    <h2 id="earth">Tierra</h2>
+                    <p>La Tierra es un planeta oceánico. La abundancia de agua y vida de nuestro mundo natal lo hace único en nuestro sistema solar. Otros planetas, además de algunas lunas, tienen hielo, atmósferas, estaciones e incluso clima, pero solo
+                        en la Tierra todo puede unirse de una manera que fomente la vida.</p>
+                </li>
+
+                <li>
+                    <h2 id="mars">Marte</h2>
+                    <p>Aunque los detalles de la superficie de Marte son difíciles de ver desde la Tierra, las observaciones del telescopio muestran características que cambian estacionalmente y manchas blancas en los polos. Durante décadas, la gente especuló
+                        que las áreas brillantes y oscuras de Marte eran parches de vegetación, que Marte podría ser un lugar probable para las formas de vida, y que podría existir agua en los casquetes polares. Cuando la nave espacial Mariner 4 sobrevoló
+                        Marte en 1965, muchos se sorprendieron al ver fotografías de una superficie desolada y llena de cráteres. Marte parecía ser un planeta muerto. Sin embargo, misiones posteriores han demostrado que Marte es un miembro complejo del
+                        sistema solar y encierra muchos misterios aún por resolver.</p>
+                </li>
+
+                <li>
+                    <h2 id="jupiter">Jupiter</h2>
+                    <p>Es el planeta más grande de nuestro sistema solar, con cuatro lunas grandes y muchas lunas más pequeñas, Júpiter forma una especie de sistema solar en miniatura. Júpiter se parece a una estrella en composición. De hecho, si hubiera
+                        sido unas 80 veces más grande, se habría convertido en una estrella en lugar de un planeta.</p>
+                </li>
+
+                <li>
+                    <h2 id="saturn">Saturno</h2>
+                    <p>Saturno era el más distante de los cinco planetas conocidos por los antiguos. Como Júpiter, Saturno está compuesto principalmente de hidrógeno y helio. Su volumen es 755 veces mayor que el de la Tierra. Los vientos en la atmósfera
+                        superior alcanzan los 500 metros (1.600 pies) por segundo en la región ecuatorial. Estos vientos superrápidos, combinados con el calor que se eleva desde el interior del planeta, provocan las bandas amarillas y doradas visibles
+                        en la atmósfera.</p>
+                </li>
+
+                <li>
+                    <h2 id="uranus">Urano</h2>
+                    <p>El primer planeta encontrado con la ayuda de un telescopio, Urano fue descubierto en 1781 por el astrónomo William Herschel. El séptimo planeta desde el Sol está tan distante que se necesitan 84 años para completar una órbita.</p>
+                </li>
+
+                <li>
+                    <h2 id="neptune">Neptuno</h2>
+                    <p>A casi 4.5 mil millones de kilómetros (2.8 mil millones de millas) del Sol, Neptuno orbita al Sol una vez cada 165 años. Es invisible a simple vista debido a su extrema distancia de la Tierra. Curiosamente, la inusual órbita elíptica
+                        de el planeta enano Plutón lleva a Plutón dentro de la órbita de Neptuno durante un período de 20 años de cada 248 años terrestres.</p>
+                </li>
+
+                <li>
+                    <h2 id="pluto">Pluton</h2>
+                    <p>Diminuto, frío e increíblemente distante, Plutón fue descubierto en 1930 y durante mucho tiempo se lo consideró el noveno planeta. Pero después de los descubrimientos de mundos intrigantes similares aún más lejos, Plutón fue reclasificado
+                        como un planeta enano. Esta nueva clase de mundos puede ofrecer algunas de las mejores pruebas de los orígenes de nuestro sistema solar.</p>
+                </li>
+            </ul>
+
+        </section>
+        <h2 style="text-align: center; color: brown;">Tipos de Meteoros que han caído a la tierra</h2>
+    </div>
+
+
+</body>
+
+</html>
